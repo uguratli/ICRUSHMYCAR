@@ -76,7 +76,7 @@ if st.button("Drive! 🚘"):
 
     if event < risk:
         st.session_state.game_over = True
-        st.error("💥 An accident occurred! Game Over! You survived {st.session_state.score} days.")
+        st.error(f"💥 An accident occurred! Game Over! You survived {st.session_state.score} days.")
         random_gif = random.choice(["1.gif", "2.gif", "3.gif", "4.gif"])
         st.image(random_gif, caption="💥 Accident Occurred!", use_container_width=True)
         time.sleep(5)
