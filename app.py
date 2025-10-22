@@ -53,7 +53,7 @@ st.write(f"⛅ Weather: {condition['weather'].capitalize()},\
 st.dataframe(routes.drop(columns=['accident_risk', 'lighting', 'weather', 'time_of_day', 'holiday', 'school_season']),
              hide_index=True,
              height=200, use_container_width=True,
-             column_config={"id": st.column_config.NumberColumn("ID", width="small"),
+             column_config={"id": st.column_config.NumberColumn("Road ID", width="small"),
                             "num_reported_accidents": st.column_config.NumberColumn("Reported Accidents", width="normal"),
                             "road_signs_present": st.column_config.CheckboxColumn("Road Signs"),
                             "road_type": st.column_config.TextColumn("Road Type", width="small"),
@@ -88,3 +88,15 @@ if st.button("Drive! 🚘"):
         st.session_state.scenario = None
         st.session_state.roads = None
         st.rerun()
+
+st.markdown(
+    """
+    <hr>
+    <div style='text-align: center; font-size: 13px; color: gray;'>
+        © 2025 Death Stranding | Created by <b>uguratli</b>
+        <br> This code was made within the scope of <a href='https://www.kaggle.com/competitions/playground-series-s5e10'  target='_blank'>Kaggle · Playground Prediction Competition</a>.
+        <br>Follow on <a href='https://github.com/uguratli' target='_blank'>GitHub</a>, <a href='https://www.kaggle.com/uuratl' target='_blank'>Kaggle</a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
